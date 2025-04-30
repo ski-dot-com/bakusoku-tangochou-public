@@ -1,0 +1,1 @@
+@py -m bakusoku_tangochou.server serve

@@ -1,0 +1,20 @@
+[project]
+name = "bakusoku-tangochou"
+version = "0.1.0"
+description = "TA前提の単語帳です。最高記録を狙おう！"
+authors = [
+    {name = "ski.com",email = "100414605+ski-dot-com@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jsonrpcserver (>=5.0.9,<6.0.0)",
+    "jsonrpcclient (>=4.0.3,<5.0.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "cryptography (>=44.0.2,<45.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
