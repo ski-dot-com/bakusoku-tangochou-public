@@ -3,7 +3,7 @@ from jsonrpcclient import request, Ok, Error, parse
 from uuid import UUID
 from http.client import HTTPSConnection, HTTPConnection
 from urllib.parse import urlparse
-from ssl import PROTOCOL_TLS, _create_unverified_context
+from ssl import PROTOCOL_TLSv1_2, _create_unverified_context
 from json import dumps, loads
 import urllib.request
 
@@ -11,8 +11,7 @@ import urllib.request
 from ..core import Difficulty, CustomDifficulty, Question, RankingEntry
 from .config import LoginData
 
-CTX=_create_unverified_context(PROTOCOL_TLS)
-
+CTX=_create_unverified_context()
 def post(url:str,json):
 	with urllib.request.urlopen(urllib.request.Request(
 		url,

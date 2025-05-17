@@ -1,1 +1,1 @@
-@py -m bakusoku_tangochou.client
+@python -m bakusoku_tangochou.client

@@ -1,5 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from ssl import SSLContext, PROTOCOL_TLS_SERVER
+from ssl import SSLContext, PROTOCOL_TLSv1_2
 from typing import NamedTuple
 from uuid import uuid4, UUID
 from os.path import exists
@@ -13,7 +13,7 @@ from .database import load_database,Database
 
 def serve(database_path:str="default.db",cert_path:str="cert.pem",key_path:str="key.pem",port:int=8080):
 	with load_database(database_path,False) as db:
-		context = SSLContext(PROTOCOL_TLS_SERVER)
+		context = SSLContext(PROTOCOL_TLSv1_2)
 		context.load_cert_chain(cert_path,key_path)
 		if not exists(cert_path):
 			print("Error: 証明書ファイルが存在しませんでした。サブコマンド「generate_cert」を用いると秘密鍵と一緒に生成できます。")
